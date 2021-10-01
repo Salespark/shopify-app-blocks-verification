@@ -3,10 +3,6 @@ import auth from "../Http/Middleware/Auth";
 
 const routes = (fastify: any, options: object, done: any) => {
 
-    // appBlockTemplates: {
-    //     type: 'array',
-    //     enum: ['product', 'collection', 'index']
-    // }
     fastify.post('/verify', {
         preValidation: auth,
         schema: {
@@ -16,7 +12,7 @@ const routes = (fastify: any, options: object, done: any) => {
                 properties: {
                     shop: {type: 'string'},
                     accessToken: {type: 'string'},
-
+                    appBlockTemplates: {type: 'string'}
                 }
             }
         },

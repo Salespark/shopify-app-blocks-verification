@@ -6,6 +6,9 @@ class VerificationController {
 
     public static verification = async (request: any, reply: any) => {
         try {
+            let {appBlockTemplates} = request.body;
+            appBlockTemplates = JSON.parse(appBlockTemplates);
+            request.body = {...request.body, appBlockTemplates: appBlockTemplates}
             const response = await ShopifyService.verifyAppBlocks(request);
             const data = {
                 verify: response
