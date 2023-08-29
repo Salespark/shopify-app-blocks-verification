@@ -1,0 +1,19 @@
+services:
+  appBlockVerification:
+    env_file:
+      - .env
+    build: .
+    image: appBlockVerification:${APP_TAG}
+    container_name: appBlockVerification-${APP_TAG}
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:${APP_DOCKER_PORT?err}:${APP_PORT?err}"
+    volumes:
+      - ./storage/logs/pm2:/var/app/logs/pm2
+    logging:
+      options:
+        max-size: 1g
+
+networks:
+  default:
+    name: local
