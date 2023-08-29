@@ -10,7 +10,7 @@ read containerChoice
 if [ "$containerChoice" -eq 1 ]; then
   echo "Enter the name of the Docker container:"
   read containerInput
-  docker rm -f "appBlockVerification-$containerInput"
+  docker rm -f "appblockverification-$containerInput"
 fi
 
 echo "Removed existing image"
@@ -23,7 +23,7 @@ read imageChoice
 if [ "$imageChoice" -eq 1 ]; then
   echo "Enter the name of the Docker image:"
   read imageInput
-  docker rmi -f "appBlockVerification:$imageInput"
+  docker rmi -f "appblockverification:$imageInput"
 fi
 
 echo "Enter the tag name:"

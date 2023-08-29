@@ -1,6 +1,6 @@
 #enviornment files
 environment/.env
-environment/firebaseServiceAccountKey.json
+.env
 
 #IDE
 .idea

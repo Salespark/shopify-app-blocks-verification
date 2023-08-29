@@ -1,10 +1,10 @@
 services:
-  appBlockVerification:
+  appblockverification:
     env_file:
       - .env
     build: .
-    image: appBlockVerification:${APP_TAG}
-    container_name: appBlockVerification-${APP_TAG}
+    image: appblockverification:${APP_TAG}
+    container_name: appblockverification-${APP_TAG}
     restart: unless-stopped
     ports:
       - "127.0.0.1:${APP_DOCKER_PORT?err}:${APP_PORT?err}"
